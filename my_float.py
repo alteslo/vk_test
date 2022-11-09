@@ -1,4 +1,4 @@
-def my_float(str_float=None):
+def my_float(str_float=0.0):
 
     def float_proc(str_float):
         int_map = {
@@ -28,7 +28,7 @@ def my_float(str_float=None):
         return a * minus_balanser
 
     if str_float is None:
-        return 0.0
+        raise TypeError("float() argument must be a string or a number, not 'NoneType'")
     elif isinstance(str_float, int):
         return str_float * 1.0
     elif isinstance(str_float, float):
@@ -48,9 +48,10 @@ def my_float(str_float=None):
         raise ValueError(f'could not convert to float: {str_float}')
 
 
+print(float(None))
 
-# a = '1234'
-# print(my_float(a))
+a = '1234'
+print(my_float(a))
 
 # a = 'авпавыпв'
 # print(my_float(a))
@@ -65,6 +66,6 @@ def my_float(str_float=None):
 # a = 'd5.5'
 # print(my_float(a))
 
-a = []
-print(my_float(a))
+# a = []
+# print(my_float(a))
  
